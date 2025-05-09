@@ -6,8 +6,8 @@ import "./styles.css";
 // Importing all the images
 import slide1 from '../assets/slide1.jpg';
 import slide2 from '../assets/slide2.jpg';
-import slide3 from '../assets/slide3.jpg'; // Replace with actual image
-import slide4 from '../assets/slide4.jpg'; // Replace with actual image
+//import slide3 from '../assets/slide3.jpg'; // Replace with actual image
+//import slide4 from '../assets/slide4.jpg'; // Replace with actual image
 import slide5 from '../assets/slide5.jpg'; // Replace with actual image
 import slide6 from '../assets/slide6.jpg'; // Replace with actual image
 import slide7 from '../assets/slide7.jpg'; // Replace with actual image
@@ -25,16 +25,16 @@ const ContactUsPage = () => {
       heading: "DIRECT TRADE ADVANTAGE", 
       description: "Eliminate middlemen! Farmers earn fair prices, and consumers get fresh produce at better rates.",
     },
-    { 
-      img: slide3, 
-      heading: "COMMUNITY ORDERS", 
-      description: "Stronger Together, Smarter Savings! Community Orders allow neighbors to combine purchases for better discounts and reduced delivery charges.",
-    },
-    { 
-      img: slide4, 
-      heading: "FARMER'S COMMUNITY", 
-      description: "Connect, Share, Grow! A dedicated space for farmers to share insights, ask questions, and support each other in their agricultural journey.",
-    },
+    // { 
+    //   img: slide3, 
+    //   heading: "COMMUNITY ORDERS", 
+    //   description: "Stronger Together, Smarter Savings! Community Orders allow neighbors to combine purchases for better discounts and reduced delivery charges.",
+    // },
+    // { 
+    //   img: slide4, 
+    //   heading: "FARMER'S COMMUNITY", 
+    //   description: "Connect, Share, Grow! A dedicated space for farmers to share insights, ask questions, and support each other in their agricultural journey.",
+    // },
     { 
       img: slide5, 
       heading: "SUBSCRIPTION", 
