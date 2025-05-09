@@ -154,3 +154,40 @@
       font-size: 18px; /* Reduced font size */
     }
   }
+  /* Navbar1.css, Navbar2.css, and Navbar3.css */
+.translator-container {
+  margin-right: 20px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Adjust the Google Translate dropdown styles */
+.goog-te-banner-frame {
+  display: none !important; /* Hide the Google Translate top banner */
+}
+
+.goog-te-menu-value {
+  color: #333 !important;
+}
+
+.goog-te-menu-value span {
+  color: #333 !important;
+}
+
+.goog-te-gadget {
+  font-family: inherit !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .translator-container {
+    margin-right: 10px;
+    order: -1;
+    margin-bottom: 10px;
+  }
+  
+  .goog-te-menu-value {
+    font-size: 14px !important;
+  }
+}
