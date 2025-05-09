@@ -11,9 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-#google_translate_element select {
-  background: #f4f4f4;
-  color: #333;
-  border-radius: 5px;
-  padding: 4px 8px;
-}

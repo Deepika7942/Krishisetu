@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+/* Hide the Google logo and branding (note: violates TOS, so avoid for production) */
+/*
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+*/
+
+/* Style the container */
+#google_translate_element {
+  text-align: right;
+  margin: 10px 20px;
+}
+
+/* Style the dropdown */
+.goog-te-combo {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.goog-te-combo:hover {
+  border-color: #007BFF;
+}
+
+/* Optional: Add a shadow */
+.goog-te-combo {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

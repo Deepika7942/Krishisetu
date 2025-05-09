@@ -301,7 +301,7 @@ import Navbar3 from "./pages/Navbar3";
 import Sidebar from "./components/Sidebar";
 import Chatbot from "./components/Chatbot";
 
-import googleTranslator from './components/GoogleTranslate';
+// import googleTranslator from './components/GoogleTranslate';
 // Shared Components
 import Cart from "./components/Cart";
 import Contact from "./pages/Contact";
@@ -439,12 +439,12 @@ const Main = () => {
       path.startsWith("/consumer-orders") ||
       path === "/subscribe"
     ) {
-      return (
-        <>
-          <Navbar3 />
-          <div id="google_translate_element" style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 1000 }}></div>
-        </>
-      );
+      // return (
+      //   <>
+      //     <Navbar3 />
+      //     <div id="google_translate_element" style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 1000 }}></div>
+      //   </>
+      // );
     }
 
     return (
@@ -458,7 +458,7 @@ const Main = () => {
             path.startsWith("/consumer-register")
           }
         />
-        <div id="google_translate_element" style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 1000 }}></div>
+        {/* <div id="google_translate_element" style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 1000 }}></div> */}
       </>
     );
   };

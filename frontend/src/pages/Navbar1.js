@@ -130,7 +130,7 @@ import React, { useEffect, useState } from 'react';
 import logo from '../assets/logo.jpg';
 import './Navbar1.css';
 import { useNavigate } from 'react-router-dom';
-import GoogleTranslator from '../components/GoogleTranslate';
+
 
 const Navbar1 = ({ isLoginPage = false, isAuthPage = false }) => {
   const navigate = useNavigate();
@@ -154,9 +154,7 @@ const Navbar1 = ({ isLoginPage = false, isAuthPage = false }) => {
       </div>
       
       <div className="navbar-right-content">
-        <div className="translator-container">
-          <GoogleTranslator />
-        </div>
+       
         
         <ul className="navbar-links">
           <li>

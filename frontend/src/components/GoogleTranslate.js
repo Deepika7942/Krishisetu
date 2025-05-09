@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import "./GoogleTranslator.css";
 const GoogleTranslate = () => {
   useEffect(() => {
     const script = document.createElement("script");
