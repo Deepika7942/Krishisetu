@@ -77,7 +77,7 @@ useEffect(() => {
             Bargain
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
             to="/community-home"
             className={`navbar-link ${isHovered === 3 ? 'hover' : ''} ${isActive("/communityHome") ? 'active' : ''}`}
@@ -85,7 +85,7 @@ useEffect(() => {
             onMouseLeave={handleMouseLeave}>
             Community Orders
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link
             to="/subscribe"

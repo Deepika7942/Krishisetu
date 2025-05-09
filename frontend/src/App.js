@@ -58,7 +58,7 @@ import Notifications from "./components/Notifications";
 // import Feeds from "./components/Feeds";
 // import ViewProfile from "./components/ViewProfile";
 // import Help from "./components/Help";
-// import Subscription from "./components/Subscribe";
+import Subscription from "./components/Subscribe";
 
 // Auth & Dashboard
 import LoginPage from "./pages/LoginPage";
@@ -71,7 +71,7 @@ import ConsumerDashboard from "./components/ConsumerDashboard";
 
 // Farmer & Consumer
 // import FarmerProfile from "./components/FarmerDetails";
-// import ConsumerProfile from "./components/Consumer-profile";
+import ConsumerProfile from "./components/ConsumerProfile";
 import FarmerProfile from "./components/FarmerProfile";
 // import FarmerDetails from "./components/FarmerDetails";
 // import ProductDetails from "./components/ProductDetails";
@@ -231,8 +231,8 @@ const Main = () => {
           <Route path="/consumer-dashboard" element={<ConsumerDashboard />} />
 
           {/* Profiles */}
-          {/* <Route path="/farmer" element={<FarmerProfile />} />
-          <Route path="/consumerprofile/:consumer_id" element={<ConsumerProfile />} /> */}
+          {/* <Route path="/farmer" element={<FarmerProfile />} /> */}
+          <Route path="/consumerprofile/:consumer_id" element={<ConsumerProfile />} />
           <Route path="/farmer/:farmer_id/profile" element={<FarmerProfile />} />
           {/* <Route path="/farmerDetails/:farmer_id" element={<FarmerDetails />} />
           <Route path="/view-profile" element={<ViewProfile />} /> */}
@@ -271,7 +271,7 @@ const Main = () => {
           <Route path="/help" element={<Help />} />
           <Route path="/HelpFarmers" element={<HelpFarmers />} /> */}
           <Route path="/farmers/my-reviews" element={<FarmerReviews />} />
-          {/* <Route path="/subscribe" element={<Subscription />} />  */}
+          <Route path="/subscribe" element={<Subscription />} /> 
 
           {/* Payments */}
           {/* <Route path="/payment" element={<Payment />} />
