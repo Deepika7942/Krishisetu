@@ -687,12 +687,12 @@ useEffect(() => {
                   >
                     <FontAwesomeIcon icon={faBolt} /> Buy
                   </button>
-                  <button 
+                  {/* <button 
                     onClick={(e) => handleAddToCommunityOrders(product, e)}
                     className="ks-action-btn ks-community-btn"
                   >
                     <FontAwesomeIcon icon={faUsers} /> Community
-                  </button>
+                  </button> */}
                   <button
                     onClick={(e) => handleSubscribe(product, e)}
                     className="ks-action-btn ks-subscribe-btn"

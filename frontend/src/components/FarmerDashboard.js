@@ -316,7 +316,7 @@ const Dashboard = () => {
           </div>
           
           <div className="ks-tutorial-content">
-            <div className="ks-video-container">
+            {/* <div className="ks-video-container">
               <iframe
                 src={`https://www.youtube.com/embed/${videoId}`}
                 frameBorder="0"
@@ -325,7 +325,7 @@ const Dashboard = () => {
                 title="Farmer tutorial"
                 className="ks-tutorial-video"
               ></iframe>
-            </div>
+            </div> */}
             
             <div className="ks-tips-container">
               <h3 className="ks-tips-title">Quick Farming Tips</h3>

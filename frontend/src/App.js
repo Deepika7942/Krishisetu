@@ -73,8 +73,8 @@ import ConsumerDashboard from "./components/ConsumerDashboard";
 // import FarmerProfile from "./components/FarmerDetails";
 import ConsumerProfile from "./components/ConsumerProfile";
 import FarmerProfile from "./components/FarmerProfile";
-// import FarmerDetails from "./components/FarmerDetails";
-// import ProductDetails from "./components/ProductDetails";
+import FarmerDetails from "./components/FarmerDetails";
+import ProductDetails from "./components/ProductDetails";
 // import OrderReview from "./pages/OrderReview";
 import AddProduce from "./components/AddProduce";
 import FarmerReviews from "./components/FarmerReview";
@@ -234,11 +234,11 @@ const Main = () => {
           {/* <Route path="/farmer" element={<FarmerProfile />} /> */}
           <Route path="/consumerprofile/:consumer_id" element={<ConsumerProfile />} />
           <Route path="/farmer/:farmer_id/profile" element={<FarmerProfile />} />
-          {/* <Route path="/farmerDetails/:farmer_id" element={<FarmerDetails />} />
-          <Route path="/view-profile" element={<ViewProfile />} /> */}
+           <Route path="/farmerDetails/:farmer_id" element={<FarmerDetails />} />
+          {/* <Route path="/view-profile" element={<ViewProfile />} />  */}
 
           {/* Products and Orders */}
-          {/* <Route path="/productDetails/:product_id" element={<ProductDetails />} /> */}
+          <Route path="/productDetails/:product_id" element={<ProductDetails />} />
           <Route path="/add-produce" element={<AddProduce />} />
           {/* <Route path="/cart" element={<Cart />} /> */}
           {/* <Route path="/orderpage" element={<OrderPage />} />
