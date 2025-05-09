@@ -1,0 +1,714 @@
+/* Krishiseta Marketplace - BigBasket Inspired CSS */
+:root {
+  --primary-green: #2e7d32;
+  --primary-dark-green: #1b5e20;
+  --primary-light-green: #e8f5e9;
+  --secondary-orange: #ff6d00;
+  --accent-yellow: #ffab00;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --dark-gray: #616161;
+  --text-dark: #212121;
+  --text-medium: #424242;
+  --text-light: #757575;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.15);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Base Styles */
+body {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  background-color: var(--light-gray);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.ks-consumer-dashboard {
+  display: flex;
+  max-width: 98vw;
+  margin: 80px auto 20px;
+  gap: 20px;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Main Marketplace Section (70%) */
+.ks-market-section {
+  flex: 7;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  min-width: 0; /* Allow flexbox to shrink */
+  position: relative;
+}
+
+/* Bargaining Marketplace Section (30%) */
+.ks-bargaining-section {
+  flex: 3;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  min-width: 0; /* Allow flexbox to shrink */
+  padding: 20px;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+/* Header Styles */
+.ks-section-title {
+  font-size: 1.5rem;
+  color: var(--primary-dark-green);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 10px;
+  font-weight: 700;
+}
+
+.ks-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--secondary-orange));
+  border-radius: 2px;
+}
+
+/* Search and Filter Containers */
+.ks-search-filter-container,
+.ks-farmer-search-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.ks-search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 20px;
+  border: 2px solid var(--medium-gray);
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
+}
+
+.ks-search-input:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px var(--primary-light-green);
+}
+
+.ks-filter-group,
+.ks-farmer-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.ks-filter-select {
+  padding: 10px 15px;
+  border: 2px solid var(--medium-gray);
+  border-radius: 30px;
+  font-size: 0.9rem;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  flex: 1;
+  min-width: 120px;
+}
+
+.ks-filter-select:focus {
+  outline: none;
+  border-color: var(--primary-green);
+}
+
+/* Product Grid */
+.ks-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Product Card */
+.ks-product-card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid var(--medium-gray);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ks-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-green);
+}
+
+.ks-product-image-container {
+  position: relative;
+  height: 160px;
+  width: 100%; /* Add this to ensure full width */
+  overflow: hidden;
+  background: var(--light-gray);
+  flex-shrink: 0;
+}
+
+.ks-product-image {
+  width: 100%; /* Changed from fixed width to 100% */
+  height: 100%; /* Changed from fixed height to 100% */
+  object-fit: cover; /* This will cover the entire container */
+  transition: var(--transition);
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px 8px 0 0; /* Only round top corners to match card */
+  padding: 0; /* Remove padding to allow full coverage */
+}
+
+/* Remove the organic badge if it's causing layout issues */
+.ks-organic-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+}
+.ks-product-card:hover .ks-product-image {
+  transform: scale(1.05);
+}
+
+.ks-product-image-container {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  background: #f5f5f5;
+  cursor: pointer; /* Add this to show it's clickable */
+  transition: all 0.3s ease;
+}
+
+.ks-product-image-container:hover {
+  opacity: 0.9;
+}
+
+.ks-organic-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  cursor: pointer; /* Make badge clickable too */
+}
+/* 
+.ks-organic-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  box-shadow: var(--shadow-sm);
+} */
+
+.ks-product-details {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ks-product-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  display:-webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 40px;
+  line-height: 1.3;
+}
+
+.ks-product-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.ks-product-type {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.ks-product-type.organic {
+  background-color: var(--primary-light-green);
+  color: var(--primary-dark-green);
+}
+
+.ks-product-type.standard {
+  background-color: #E3F2FD;
+  color: #1976D2;
+}
+
+.ks-product-category {
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: #F5F5F5;
+  color: var(--text-medium);
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.ks-price-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.ks-price-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.ks-price-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-dark-green);
+}
+
+.ks-quantity-selector {
+  margin-bottom: 1rem;
+}
+
+.ks-quantity-dropdown {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.ks-quantity-dropdown:focus {
+  outline: none;
+  border-color: var(--primary-green);
+}
+
+.ks-product-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.ks-action-btn {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.ks-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.ks-cart-btn {
+  background-color: #FFEB3B;
+  color: #F57F17;
+}
+
+.ks-buy-btn {
+  background-color: var(--secondary-orange);
+  color: white;
+}
+
+.ks-community-btn {
+  background-color: #E1BEE7;
+  color: #7B1FA2;
+}
+
+.ks-subscribe-btn {
+  background-color: #BBDEFB;
+  color: #0D47A1;
+}
+
+/* Farmer Cards */
+.ks-farmers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ks-farmer-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.ks-farmer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.ks-farmer-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--primary-light-green), var(--white));
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+/* .ks-farmer-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-green);
+  margin-right: 15px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+} */
+
+.ks-farmer-card:hover .ks-farmer-avatar {
+  transform: scale(1.1);
+}
+
+.ks-farmer-basic-info {
+  flex: 1;
+  min-width: 0;
+  margin-left: 10px;
+}
+
+.ks-farmer-name {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ks-farmer-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ks-farmer-id {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+.ks-farmer-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.ks-star-filled {
+  color: #FFC107;
+  font-size: 0.9rem;
+}
+
+.ks-star {
+  color: #E0E0E0;
+  font-size: 0.9rem;
+}
+
+.ks-products-table-container {
+  padding: 15px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.ks-products-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.ks-products-table th,
+.ks-products-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--medium-gray);
+  white-space: nowrap;
+}
+
+.ks-products-table th {
+  background-color: var(--primary-light-green);
+  color: var(--primary-dark-green);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+.ks-products-table tr:hover td {
+  background-color: rgba(200, 230, 201, 0.3);
+}
+
+.ks-farmer-actions {
+  padding: 15px;
+  text-align: center;
+}
+
+.ks-farmer-action-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green));
+  color: white;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  justify-content: center;
+}
+
+.ks-farmer-action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  background: linear-gradient(135deg, var(--primary-dark-green), var(--primary-green));
+}
+
+.ks-farmer-action-btn:disabled {
+  background: var(--medium-gray);
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: var(--secondary-orange);
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .ks-consumer-dashboard {
+    flex-direction: column;
+  }
+  
+  .ks-bargaining-section {
+    position: static;
+    max-height: none;
+    top: auto;
+  }
+
+  .ks-market-section,
+  .ks-bargaining-section {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ks-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+  
+  .ks-product-image-container {
+    height: 140px;
+  }
+  
+  .ks-product-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .ks-section-title {
+    font-size: 1.3rem;
+  }
+
+  .ks-search-filter-container,
+  .ks-farmer-search-container {
+    flex-direction: column;
+  }
+
+  .ks-search-input,
+  .ks-filter-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .ks-consumer-dashboard {
+    padding: 0 10px;
+    margin-top: 70px;
+  }
+
+  .ks-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .ks-product-name {
+    font-size: 14px;
+    min-height: 36px;
+  }
+
+  .ks-product-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .ks-farmer-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .ks-farmer-avatar {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .ks-farmer-meta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ks-products-table th,
+  .ks-products-table td {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
+}
+.ks-farmer-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ks-star-filled {
+  color: #FFD700; /* Gold color for filled stars */
+}
+
+.ks-star {
+  color: #ccc; /* Gray color for empty stars */
+}
+
+.ks-rating-value {
+  margin-left: 4px;
+  font-size: 0.9em;
+  color: #666;
+}
+/* Add these styles to your ConsumerDashboard.css file */
+
+.ks-farmer-avatar-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #4CAF50; /* Green border */
+  box-sizing: border-box; /* Ensures border is included in dimensions */
+}
+
+.ks-farmer-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Ensures image stays circular */
+}
+
+.ks-farmer-avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  /* No border needed here since container already has it */
+}
