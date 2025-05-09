@@ -87,26 +87,26 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             {isOpen && 'Plant Health'}
           </button>
 
-          <button
+          {/* <button
             onClick={() => setShowCommunity(true)}
             title="Farmer's Community"
           >
             <i className="fas fa-users"></i>
             {isOpen && "Community"}
-          </button>
+          </button> */}
 
-          <button
+          {/* <button
             onClick={() => navigate('/helpfarmers')}
             className={isActive('/helpfarmers') ? 'active' : ''}
             title="Help and Support"
           >
             <i className="fas fa-question-circle"></i>
             {isOpen && 'Support'}
-          </button>
+          </button> */}
         </div>
       </div>
 
-      {showCommunity && (
+      {/* {showCommunity && (
         <div className="community-overlay">
           <button className="close-btn" onClick={() => setShowCommunity(false)}>
             <i className="fas fa-times"></i>
@@ -117,7 +117,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             title="Farmer's Community"
           />
         </div>
-      )}
+      )} */}
     </>
   );
 };

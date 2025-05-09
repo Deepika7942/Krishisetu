@@ -77,7 +77,7 @@ import FarmerProfile from "./components/FarmerProfile";
 // import ProductDetails from "./components/ProductDetails";
 // import OrderReview from "./pages/OrderReview";
 import AddProduce from "./components/AddProduce";
-// import FarmerReviews from "./components/FarmerReview";
+import FarmerReviews from "./components/FarmerReview";
 
 // // Bargaining
 // import ConsumerChatList from './components/bargaining/ConsumerChatList';
@@ -267,11 +267,11 @@ const Main = () => {
 
           {/* Other */}
           <Route path="/notifications" element={<Notifications />} />
-          {/* <Route path="/feeds" element={<Feeds />} />
+           {/* <Route path="/feeds" element={<Feeds />} />
           <Route path="/help" element={<Help />} />
-          <Route path="/HelpFarmers" element={<HelpFarmers />} />
+          <Route path="/HelpFarmers" element={<HelpFarmers />} /> */}
           <Route path="/farmers/my-reviews" element={<FarmerReviews />} />
-          <Route path="/subscribe" element={<Subscription />} /> */} 
+          {/* <Route path="/subscribe" element={<Subscription />} />  */}
 
           {/* Payments */}
           {/* <Route path="/payment" element={<Payment />} />
