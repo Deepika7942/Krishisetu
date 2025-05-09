@@ -503,7 +503,7 @@ useEffect(() => {
   };
 
   const handleSubscribe =  (productId) => {
-    navigate(`/productDetails/${productId}`);
+    navigate(`/productDetails`);
   };
 
 
