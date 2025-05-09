@@ -51,7 +51,7 @@ import Sidebar from "./components/Sidebar";
 import Chatbot from "./components/Chatbot";
 
 // Shared Components
-// import Cart from "./components/Cart";
+import Cart from "./components/Cart";
 import Contact from "./pages/Contact";
 import ScrollSection from "./pages/ScrollSection";
 import Notifications from "./components/Notifications";
@@ -80,14 +80,14 @@ import AddProduce from "./components/AddProduce";
 import FarmerReviews from "./components/FarmerReview";
 
 // // Bargaining
-// import ConsumerChatList from './components/bargaining/ConsumerChatList';
-// import ConsumerChatWindow from './components/bargaining/ConsumerChatWindow';
-// import FarmerChatList from './components/bargaining/FarmerChatList';
-// import FarmerChatWindow from './components/bargaining/FarmerChatWindow';
-// import FarmerBargainOrders from './components/bargaining/farmerbargainorders';
-// import ConsumerBargainOrders from './components/bargaining/consumerbargainorders';
-// import BargainCart from './components/bargaining/bargainCart';
-// import BargainOrderPage from './components/bargaining/bargainOrderPage';
+import ConsumerChatList from './components/bargaining/ConsumerChatList';
+import ConsumerChatWindow from './components/bargaining/ConsumerChatWindow';
+import FarmerChatList from './components/bargaining/FarmerChatList';
+import FarmerChatWindow from './components/bargaining/FarmerChatWindow';
+import FarmerBargainOrders from './components/bargaining/farmerbargainorders';
+import ConsumerBargainOrders from './components/bargaining/consumerbargainorders';
+import BargainCart from './components/bargaining/bargainCart';
+import BargainOrderPage from './components/bargaining/bargainOrderPage';
 
 // // Payment
 // import Payment from "./components/payment";
@@ -107,7 +107,7 @@ import FarmerReviews from "./components/FarmerReview";
 
 // Other Pages
 import HomePage from "./pages/Home";
-// import OrderPage from "./components/OrderPage";
+import OrderPage from "./components/OrderPage";
 // import HelpFarmers from "./components/HelpFarmers";
 
 function App() {
@@ -240,19 +240,19 @@ const Main = () => {
           {/* Products and Orders */}
           <Route path="/productDetails/:product_id" element={<ProductDetails />} />
           <Route path="/add-produce" element={<AddProduce />} />
-          {/* <Route path="/cart" element={<Cart />} /> */}
-          {/* <Route path="/orderpage" element={<OrderPage />} />
-          <Route path="/order-review" element={<OrderReview isSidebarOpen={sidebarOpen} />} /> */}
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/orderpage" element={<OrderPage />} />
+          {/* <Route path="/order-review" element={<OrderReview isSidebarOpen={sidebarOpen} />} /> */}
 
           {/* Bargaining */}
-          {/* <Route path="/bargain" element={<ConsumerChatList />} />
+          <Route path="/bargain" element={<ConsumerChatList />} />
           <Route path="/bargain/:bargainId" element={<ConsumerChatWindow />} />
           <Route path="/farmer/bargain" element={<FarmerChatList />} />
           <Route path="/farmer/bargain/:bargainId" element={<FarmerChatWindow />} />
           <Route path="/farmer-orders" element={<FarmerBargainOrders />} />
           <Route path="/consumer-orders" element={<ConsumerBargainOrders />} />
           <Route path="/bargain-cart" element={<BargainCart />} />
-          <Route path="/bargain-orderpage" element={<BargainOrderPage />} /> */}
+          <Route path="/bargain-orderpage" element={<BargainOrderPage />} />
 
           {/* Community */}
           {/* <Route path="/community-home" element={<HomePageC />} />
