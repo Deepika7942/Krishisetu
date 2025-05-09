@@ -76,7 +76,7 @@ import ConsumerDashboard from "./components/ConsumerDashboard";
 // import FarmerDetails from "./components/FarmerDetails";
 // import ProductDetails from "./components/ProductDetails";
 // import OrderReview from "./pages/OrderReview";
-// import AddProduce from "./components/AddProduce";
+import AddProduce from "./components/AddProduce";
 // import FarmerReviews from "./components/FarmerReview";
 
 // // Bargaining
@@ -238,10 +238,10 @@ const Main = () => {
           <Route path="/view-profile" element={<ViewProfile />} /> */}
 
           {/* Products and Orders */}
-          {/* <Route path="/productDetails/:product_id" element={<ProductDetails />} />
+          {/* <Route path="/productDetails/:product_id" element={<ProductDetails />} /> */}
           <Route path="/add-produce" element={<AddProduce />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/orderpage" element={<OrderPage />} />
+          {/* <Route path="/cart" element={<Cart />} /> */}
+          {/* <Route path="/orderpage" element={<OrderPage />} />
           <Route path="/order-review" element={<OrderReview isSidebarOpen={sidebarOpen} />} /> */}
 
           {/* Bargaining */}
