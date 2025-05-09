@@ -54,7 +54,7 @@ import Chatbot from "./components/Chatbot";
 // import Cart from "./components/Cart";
 import Contact from "./pages/Contact";
 import ScrollSection from "./pages/ScrollSection";
-// import Notifications from "./components/Notifications";
+import Notifications from "./components/Notifications";
 // import Feeds from "./components/Feeds";
 // import ViewProfile from "./components/ViewProfile";
 // import Help from "./components/Help";
@@ -266,12 +266,12 @@ const Main = () => {
           <Route path="/community/:communityId/order/:orderId" element={<CommunityOrderPage />} /> */}
 
           {/* Other */}
-          {/* <Route path="/notifications" element={<Notifications />} />
-          <Route path="/feeds" element={<Feeds />} />
+          <Route path="/notifications" element={<Notifications />} />
+          {/* <Route path="/feeds" element={<Feeds />} />
           <Route path="/help" element={<Help />} />
           <Route path="/HelpFarmers" element={<HelpFarmers />} />
           <Route path="/farmers/my-reviews" element={<FarmerReviews />} />
-          <Route path="/subscribe" element={<Subscription />} /> */}
+          <Route path="/subscribe" element={<Subscription />} /> */} 
 
           {/* Payments */}
           {/* <Route path="/payment" element={<Payment />} />
