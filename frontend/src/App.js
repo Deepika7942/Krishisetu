@@ -72,7 +72,7 @@ import ConsumerDashboard from "./components/ConsumerDashboard";
 // Farmer & Consumer
 // import FarmerProfile from "./components/FarmerDetails";
 // import ConsumerProfile from "./components/Consumer-profile";
-// import Profile from "./pages/Profile";
+import FarmerProfile from "./components/FarmerProfile";
 // import FarmerDetails from "./components/FarmerDetails";
 // import ProductDetails from "./components/ProductDetails";
 // import OrderReview from "./pages/OrderReview";
@@ -137,7 +137,7 @@ const Main = () => {
       path.startsWith("/farmers/my-reviews") ||
       path.startsWith("/helpfarmers") ||
       path.startsWith("/add-produce") ||
-      path.startsWith("/profile") ||
+      path.startsWith("/FarmerProfile") ||
       path.startsWith("/help") ||
       path.startsWith("/community") ||
       path.startsWith("/view-profile") ||
@@ -189,7 +189,7 @@ const Main = () => {
     path.startsWith("/farmer-dashboard") ||
     path.startsWith("/farmer/") ||
     path.startsWith("/add-produce") ||
-    path.startsWith("/profile") ||
+    path.startsWith("/FarmerProfile") ||
     path.startsWith("/help") ||
     path.startsWith("/view-profile") ||
     path.startsWith("/order-review") ||
@@ -232,9 +232,9 @@ const Main = () => {
 
           {/* Profiles */}
           {/* <Route path="/farmer" element={<FarmerProfile />} />
-          <Route path="/consumerprofile/:consumer_id" element={<ConsumerProfile />} />
-          <Route path="/farmer/:farmer_id/profile" element={<Profile />} />
-          <Route path="/farmerDetails/:farmer_id" element={<FarmerDetails />} />
+          <Route path="/consumerprofile/:consumer_id" element={<ConsumerProfile />} /> */}
+          <Route path="/farmer/:farmer_id/profile" element={<FarmerProfile />} />
+          {/* <Route path="/farmerDetails/:farmer_id" element={<FarmerDetails />} />
           <Route path="/view-profile" element={<ViewProfile />} /> */}
 
           {/* Products and Orders */}
