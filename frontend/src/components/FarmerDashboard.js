@@ -328,7 +328,7 @@ const Dashboard = () => {
             </div> */}
             
             <div className="ks-tips-container">
-              <h3 className="ks-tips-title">Quick Farming Tips</h3>
+              <h3 className="ks-tips-title">Quick Tips</h3>
               <ul className="ks-tips-list">
                 <li className="ks-tip-item">
                   <i className="fas fa-check-circle ks-tip-icon"></i>

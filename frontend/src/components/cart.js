@@ -193,7 +193,7 @@ import {
   faExclamationTriangle,
   faSpinner
 } from '@fortawesome/free-solid-svg-icons';
-import "./Cart.css";
+import "./cart.css";
 
 const CartPage = () => {
   const { cart, setCart, removeFromCart, setCartCount, updateQuantity, calculateTotal } = useCart();

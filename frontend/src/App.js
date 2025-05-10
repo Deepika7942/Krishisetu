@@ -303,7 +303,7 @@ import Chatbot from "./components/Chatbot";
 
 // import googleTranslator from './components/GoogleTranslate';
 // Shared Components
-import Cart from "./components/Cart";
+import Cart from "./components/cart";
 import Contact from "./pages/Contact";
 import ScrollSection from "./pages/ScrollSection";
 import Notifications from "./components/Notifications";
@@ -416,12 +416,12 @@ const Main = () => {
       /\/farmer\/[A-Za-z0-9]+\/personal-details/.test(path) ||
       /\/farmer\/[A-Za-z0-9]+\/farm-details/.test(path)
     ) {
-      // return (
-      //   <>
-      //     <Navbar2 />
-      //     <div id="google_translate_element" style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 1000 }}></div>
-      //   </>
-      // );
+      return (
+        <>
+          <Navbar2 />
+          
+        </>
+      );
     }
 
     if (
@@ -439,12 +439,12 @@ const Main = () => {
       path.startsWith("/consumer-orders") ||
       path === "/subscribe"
     ) {
-      // return (
-      //   <>
-      //     <Navbar3 />
-      //     <div id="google_translate_element" style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 1000 }}></div>
-      //   </>
-      // );
+      return (
+        <>
+          <Navbar3 />
+          
+       </>
+      );
     }
 
     return (
