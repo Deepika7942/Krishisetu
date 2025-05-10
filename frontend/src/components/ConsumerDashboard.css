@@ -347,7 +347,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 1px;
   white-space: nowrap;
 }
 
@@ -356,9 +356,11 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
-.ks-cart-btn {
+/* .ks-cart-btn {
   background-color: #FFEB3B;
   color: #F57F17;
+min-width:70px;
+
 }
 
 .ks-buy-btn {
@@ -374,6 +376,37 @@ body {
 .ks-subscribe-btn {
   background-color: #BBDEFB;
   color: #0D47A1;
+  margin-left: 40px;
+} */
+ .ks-cart-btn {
+  background-color: #FFEB3B;
+  color: #F57F17;
+  min-width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+}
+
+.ks-subscribe-btn {
+  background-color: #BBDEFB;
+  color: #0D47A1;
+  grid-column: span 2; /* spans both columns below */
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+.ks-buy-btn {
+  background-color: var(--secondary-orange);
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
 }
 
 /* Farmer Cards */

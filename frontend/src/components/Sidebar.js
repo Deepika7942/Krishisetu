@@ -1,22 +1,43 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import './Sidebar.css';
 import { AuthContext } from '../context/AuthContext';
+import './Sidebar.css';
 
-const Sidebar = ({ isOpen, toggleSidebar }) => {
+// Import individual icons
+import { FaHome, FaStar, FaHandshake, FaLeaf, FaBars, FaTimes } from 'react-icons/fa';
+
+const FarmerSidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const [showCommunity, setShowCommunity] = useState(false);
   const { farmer } = useContext(AuthContext);
-  
-  const handlePlantDiseaseClick = () => {
-    window.open(
-      'https://plant-disease-detection-system-for-sustainable-agriculture-yg2.streamlit.app/',
-      '_blank'
-    );
-  };
 
-  const isActive = (path) => location.pathname === path;
+  const menuItems = [
+    {
+      path: '/farmer-dashboard',
+      icon: <FaHome className="farmer-menu-icon" />,
+      label: 'Dashboard',
+      active: location.pathname === '/farmer-dashboard'
+    },
+    {
+      path: '/farmers/my-reviews',
+      icon: <FaStar className="farmer-menu-icon" />,
+      label: 'My Reviews',
+      active: location.pathname === '/farmers/my-reviews'
+    },
+    {
+      path: '/farmer/bargain',
+      icon: <FaHandshake className="farmer-menu-icon" />,
+      label: 'Bargain',
+      active: location.pathname === '/farmer/bargain'
+    },
+    {
+      path: null,
+      icon: <FaLeaf className="farmer-menu-icon" />,
+      label: 'Plant Health',
+      action: () => window.open('https://plant-disease-detection-system-for-sustainable-agriculture-yg2.streamlit.app/', '_blank')
+    }
+  ];
 
   const navigateWithFarmerId = (path) => {
     if (!farmer?.farmer_id) {
@@ -28,98 +49,38 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   };
 
   return (
-    <>
-      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <div className="sidebar-content">
-          <button className="toggle-btn" onClick={toggleSidebar}>
-            {isOpen ? '✕' : '☰'}
-          </button>
-
-          <button
-            onClick={() => navigateWithFarmerId('/farmer-dashboard')}
-            className={isActive('/farmer-dashboard') ? 'active' : ''}
-            title="Dashboard"
-          >
-            <i className="fas fa-home"></i>
-            {isOpen && 'Dashboard'}
-          </button>
-{/* 
-          <button
-            onClick={() => navigateWithFarmerId('/view-profile')}
-            className={isActive('/view-profile') ? 'active' : ''}
-            title="View Profile"
-          >
-            <i className="fas fa-user"></i>
-            {isOpen && 'View Profile'}
-          </button> */}
-          
-          {/* <button
-            onClick={() => navigateWithFarmerId('/order-review')}
-            className={isActive('/order-review') ? 'active' : ''}
-          >
-            <i className="fas fa-clipboard-list"></i>
-            {isOpen && 'Order Review'}
-          </button> */}
-
-          <button
-            onClick={() => navigateWithFarmerId('/farmers/my-reviews')}
-            className={isActive('/farmers/my-reviews') ? 'active' : ''}
-            title="My Reviews"
-          >
-            <i className="fas fa-star"></i>
-            {isOpen && 'My Reviews'}
-          </button>
-
-          <button
-            onClick={() => navigateWithFarmerId('/farmer/bargain')}
-            className={isActive('/farmer/bargain') ? 'active' : ''}
-            title="Bargain"
-          >
-            <i className="fas fa-handshake"></i>
-            {isOpen && 'Bargain'}
-          </button>
-
-          <button
-            onClick={handlePlantDiseaseClick}
-            title="Plant Disease Detection"
-          >
-            <i className="fas fa-leaf"></i>
-            {isOpen && 'Plant Health'}
-          </button>
-
-          {/* <button
-            onClick={() => setShowCommunity(true)}
-            title="Farmer's Community"
-          >
-            <i className="fas fa-users"></i>
-            {isOpen && "Community"}
-          </button> */}
-
-          {/* <button
-            onClick={() => navigate('/helpfarmers')}
-            className={isActive('/helpfarmers') ? 'active' : ''}
-            title="Help and Support"
-          >
-            <i className="fas fa-question-circle"></i>
-            {isOpen && 'Support'}
-          </button> */}
-        </div>
+    <div className={`farmer-sidebar-container ${isOpen ? 'farmer-sidebar-open' : ''}`}>
+      <div className="farmer-sidebar-header">
+        <button 
+          className="farmer-sidebar-hamburger" 
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        >
+          {isOpen ? (
+            <FaTimes className="farmer-hamburger-icon" />
+          ) : (
+            <FaBars className="farmer-hamburger-icon" />
+          )}
+        </button>
       </div>
-
-      {/* {showCommunity && (
-        <div className="community-overlay">
-          <button className="close-btn" onClick={() => setShowCommunity(false)}>
-            <i className="fas fa-times"></i>
-          </button>
-          <iframe
-            src="https://farmer-s-community.onrender.com"
-            className="community-iframe"
-            title="Farmer's Community"
-          />
-        </div>
-      )} */}
-    </>
+      
+      <div className="farmer-sidebar-menu">
+        {menuItems.map((item, index) => (
+          <div 
+            key={`farmer-menu-${index}`}
+            className={`farmer-menu-item ${item.active ? 'farmer-menu-active' : ''}`}
+            onClick={() => item.path ? navigateWithFarmerId(item.path) : item.action()}
+            data-farmer-tooltip={isOpen ? '' : item.label}
+          >
+            <div className="farmer-menu-icon-container">
+              {item.icon}
+            </div>
+            {isOpen && <span className="farmer-menu-label">{item.label}</span>}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default Sidebar;
+export default FarmerSidebar;
