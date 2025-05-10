@@ -2665,7 +2665,7 @@ const processVoiceCommand = (command, currentState) => {
   const filteredCommand = command.replace(/\b(please|kindly|can you|i want to|i would like to)\b/gi, '').trim();
   
   // Market selection
-  if (filteredCommand.includes('krishisetu') || filteredCommand.includes('krishi setu') || filteredCommand.includes('normal market')) {
+  if (filteredCommand.includes('krishisetu') || filteredCommand.includes('krishi setu') || filteredCommand.includes('normal market')||filteredCommand.includes('krishi se tu')) {
     return { action: 'selectMarket', market: 'krishisetu' };
   }
   if (filteredCommand.includes('bargaining') || filteredCommand.includes('bargain') || filteredCommand.includes('deal market')) {
@@ -2705,7 +2705,7 @@ const processVoiceCommand = (command, currentState) => {
   const fieldCommands = [
     setFieldCommand('produce_name', ['name', 'call it', 'label'], (val) => val),
     setFieldCommand('availability', ['quantity', 'amount', 'available', 'have'], parseFloat),
-    setFieldCommand('price_per_kg', ['price', 'rate', 'cost', 'per kg'], parseFloat),
+    setFieldCommand('price', ['price', 'rate', 'cost', 'per kg'], parseFloat),
     setFieldCommand('minimum_quantity', ['minimum quantity', 'least amount', 'smallest quantity'], parseFloat),
     setFieldCommand('minimum_price', ['minimum price', 'lowest rate', 'least cost'], parseFloat),
     (filteredCommand.includes('organic') || filteredCommand.includes('natural')) ? 
