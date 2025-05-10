@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
-// import { useTranslation } from "react-i18next";
+//import { useTranslation } from "react-i18next";
 import "./FarmerDashboard.css";
-// import LanguageSwitcher from "./LanguageSwitcher";
+//import LanguageSwitcher from "./LanguageSwitcher";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import {
@@ -21,7 +21,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 const Dashboard = () => {
   const { setFarmer } = useAuth();
-//   const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const [farmerName, setFarmerName] = useState("");
   const [forecast, setForecast] = useState([]);
@@ -316,7 +316,7 @@ const Dashboard = () => {
           </div>
           
           <div className="ks-tutorial-content">
-            {/* <div className="ks-video-container">
+            <div className="ks-video-container">
               <iframe
                 src={`https://www.youtube.com/embed/${videoId}`}
                 frameBorder="0"
@@ -325,10 +325,10 @@ const Dashboard = () => {
                 title="Farmer tutorial"
                 className="ks-tutorial-video"
               ></iframe>
-            </div> */}
+            </div>
             
             <div className="ks-tips-container">
-              <h3 className="ks-tips-title">Quick Tips</h3>
+              <h3 className="ks-tips-title">Quick Farming Tips</h3>
               <ul className="ks-tips-list">
                 <li className="ks-tip-item">
                   <i className="fas fa-check-circle ks-tip-icon"></i>
