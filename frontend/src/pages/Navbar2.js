@@ -210,7 +210,7 @@ const Navbar2 = () => {
         <li>
           <button className="icon-link logout" title="Logout" onClick={() => {
             logout();
-            navigate('/login');
+            navigate('/LoginPage');
           }}>
             <FaSignOutAlt className="icon" aria-label="Logout" />
             <span className="icon-text">Logout</span>

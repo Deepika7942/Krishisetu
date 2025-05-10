@@ -320,7 +320,10 @@ const handleRazorpayPayment = async () => {
       alert("Please select or add a recipient address.");
       return;
     }
-
+ // Check if Razorpay is loaded
+ if (!window.Razorpay) {
+  throw new Error("Razorpay payment gateway is not available. Please try again later.");
+}
     const finalAmount = calculateFinalPrice();
     if (finalAmount <= 0) {
       alert("Invalid order amount.");
