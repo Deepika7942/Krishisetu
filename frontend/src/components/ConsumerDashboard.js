@@ -495,7 +495,7 @@ useEffect(() => {
   };
 
   const handleFarmerClick = (farmerId) => {
-    navigate(`/farmerDetails/${farmerId}`);
+    navigate(`/Farmer-Details/${farmerId}`);
   };
 
   const handleAddToCommunityOrders = () => {

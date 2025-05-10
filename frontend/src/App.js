@@ -428,7 +428,7 @@ const Main = () => {
       path.startsWith("/consumer-dashboard") ||
       /\/productDetails\/[A-Za-z0-9]+/.test(path) ||
       /\/consumerprofile\/[A-Za-z0-9]+/.test(path) ||
-      /\/farmerDetails\/[A-Za-z0-9]+/.test(path) ||
+      /\/Farmer-Details\/[A-Za-z0-9]+/.test(path) ||
       path.startsWith("/payment") ||
       path.startsWith("/orderpage") ||
       path.startsWith("/consumerprofile") ||
@@ -511,7 +511,7 @@ const Main = () => {
           {/* Profiles */}
           <Route path="/consumerprofile/:consumer_id" element={<ConsumerProfile />} />
           <Route path="/farmer/:farmer_id/profile" element={<FarmerProfile />} />
-          <Route path="/farmerDetails/:farmer_id" element={<FarmerDetails />} />
+          <Route path="/Farmer-Details/:farmer_id" element={<FarmerDetails />} />
 
           {/* Products and Orders */}
           <Route path="/productDetails/:product_id" element={<ProductDetails />} />
