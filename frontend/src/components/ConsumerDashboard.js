@@ -502,8 +502,8 @@ useEffect(() => {
     navigate(`/community-home`);
   };
 
-  const handleSubscribe =  (productId) => {
-    navigate(`/productDetails`);
+  const handleSubscribe =  (product_id) => {
+    navigate(`/Product-Details/${product_id}`);
   };
 
 

@@ -426,7 +426,7 @@ const Main = () => {
 
     if (
       path.startsWith("/consumer-dashboard") ||
-      /\/productDetails\/[A-Za-z0-9]+/.test(path) ||
+      /\/Product-Details\/[A-Za-z0-9]+/.test(path) ||
       /\/consumerprofile\/[A-Za-z0-9]+/.test(path) ||
       /\/Farmer-Details\/[A-Za-z0-9]+/.test(path) ||
       path.startsWith("/payment") ||
@@ -514,7 +514,7 @@ const Main = () => {
           <Route path="/Farmer-Details/:farmer_id" element={<FarmerDetails />} />
 
           {/* Products and Orders */}
-          <Route path="/productDetails/:product_id" element={<ProductDetails />} />
+          <Route path="/Product-Details/:product_id" element={<ProductDetails />} />
           <Route path="/add-produce" element={<AddProduce />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/orderpage" element={<OrderPage />} />
