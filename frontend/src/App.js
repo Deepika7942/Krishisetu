@@ -303,7 +303,7 @@ import Chatbot from "./components/Chatbot";
 
 // import googleTranslator from './components/GoogleTranslate';
 // Shared Components
-import Cart from "./components/Cart";
+import Cart from "./components/cart";
 import Contact from "./pages/Contact";
 import ScrollSection from "./pages/ScrollSection";
 import Notifications from "./components/Notifications";
